@@ -1,0 +1,66 @@
+<html>
+   <head>
+   	  <!-- 初始化项目 -->
+   	  <meta charset = 'utf-8'>
+   	  <title>Edge Start Page Project</title>
+   	  <!-- 标签页图标 -->
+   	  <link rel = 'shortcut icon' href = "icons.ico">
+   	  <style>
+   	  	input[type=text] {
+        	color:black;
+       		background-color: black;
+        	border-top-left-radius: 100px;
+        	border-top-right-radius: 100px;
+        	border-bottom-left-radius: 100px;
+        	border-bottom-right-radius: 100px;
+        	padding:20px;
+    	}
+        input{
+            box-shadow:2px 2px 2px black;
+            border: transparent;
+            outline:none;
+            text-align: center;
+        }
+   	  	h1{
+   	  		text-shadow:2px 2px 2px grey;
+   	  		font-family:微软雅黑 Light;
+   	  		color:white;
+   	  	}
+   	  	body{
+			background: url(Normal.jpg) repeat ;
+			text-align:center;
+   	  	}   	  
+   	  </style>
+   </head>
+   <body>
+	<script>
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear(); 
+            var month = date.getMonth() + 1; 
+            var day = date.getDate(); 
+            var hour = date.getHours(); 
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = date.getMinutes(); 
+            minute = minute < 10 ? '0' + minute : minute;
+            var seconds = date.getSeconds(); 
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            return hour + ':' + minute + ':' + seconds;
+        }
+ 
+        setInterval(function() {
+            document.querySelector('.box').innerHTML = getTime();
+        }, 1000)
+    </script>
+    <div class = 'Boxbr'>
+    	<br><br><br><br>
+    </div>
+    <div class = 'TimesHeader'>
+   		<h1><div class = 'box'></div></h1>
+    </div>
+    <div class = 'Searchinput'>
+    	<input type="text" name="word" size="60" style="height: 30px;width: 500px;background-color: #9a9a9a26;">
+    </div>
+   </body>
+</html>
+<!-- 哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊，啊啊啊啊啊啊啊啊啊啊！-->
