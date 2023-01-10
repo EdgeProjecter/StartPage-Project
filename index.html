@@ -2,7 +2,8 @@
    <head>
    	  <!-- 初始化项目 -->
    	  <meta charset = 'utf-8'>
-   	  <title>Edge Start Page Project</title>
+   	  <title>Orange Startpage</title>
+
    	  <!-- 标签页图标 -->
    	  <link rel = 'shortcut icon' href = "icons.ico">
    	  <style>
@@ -47,7 +48,7 @@
     </div>
     <!-- 导入 jQuery JS库 -->
     <script type = 'text/javascript' src = 'jquery.min.js'></script>
-    <!-- 实现输入框动画 -->
+    <!-- 实现输入框、时间动画 -->
     <script type = 'text/javascript'>
         $(function(){
             $("#search").mouseover(function(){
@@ -57,7 +58,21 @@
             });
         });
     </script>
-    <!-- 防止查看源代码 -->
+    <!-- 实现搜索功能 -->
+    <script>
+        window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+            if (event.keyCode == 13){
+                var linkhalf
+                var linkog
+                var linkhref
+                linkhalf = document.getElementById("search")
+                linkog = "https://www.baidu.com/s?word="
+                linkhref = linkog + linkhalf.value
+                window.location.href = linkhref
+            }
+        }
+    </script>
+    <!--
     <script>
         window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
             if (event.keyCode == 123){
@@ -81,6 +96,7 @@
             }
         }
     </script>
+    -->
     <!-- 时间查看脚本 -->
 	<script>
         function getTime() {
@@ -101,13 +117,16 @@
             document.querySelector('.box').innerHTML = getTime();
         }, 1000)
     </script>
-    <div class = 'Boxbr'>
+    <div class = 'SearchBox'>
     	<br><br><br><br>
     <div class = 'TimesHeader'>
-   		   <h1><div class = 'box'></div></h1>
+   		   <h1 id = "TimeText"><div class = 'box'></div></h1>
     </div>
     <div class = 'Searchinput'>
     	<input type="text" name="word" id = "search",size="60" style="height: 30px;background-color: #9a9a9a26;" placeholder = "按Enter键进行检索">
+    </div>
+    <div class = 'nothing'>
+        <br>
     </div>
     </body>
 </html>
