@@ -22,17 +22,66 @@
             text-align: center;
         }
    	  	h1{
-   	  		text-shadow:2px 2px 2px grey;
+   	  		text-shadow:2px 2px 2px black;
    	  		font-family:微软雅黑 Light;
    	  		color:white;
    	  	}
    	  	body{
 			background: url(Normal.jpg) repeat ;
 			text-align:center;
-   	  	}   	  
+            user-select:none;
+   	  	}
+        body p,a{
+            position:absolute;
+            bottom:0;
+            width:98%;
+            text-align:center;
+            text-shadow:2px 2px 2px black;
+            color:White;
+        }
    	  </style>
    </head>
    <body>
+    <div class = 'Devloper'>
+        <p>Msedge_系统浏览器 编写 2023</p>
+    </div>
+    <!-- 导入 jQuery JS库 -->
+    <script type = 'text/javascript' src = 'jquery.min.js'></script>
+    <!-- 实现输入框动画 -->
+    <script type = 'text/javascript'>
+        $(function(){
+            $("#search").mouseover(function(){
+                $("#search").animate({"width":"500px"});
+            }).mouseout(function(){
+                $("#search").animate({"width":"200px"});
+            });
+        });
+    </script>
+    <!-- 防止查看源代码 -->
+    <script>
+        window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+            if (event.keyCode == 123){
+                event.preventDefault()
+                window.event.returnValue = false;
+            }
+        }
+        document.oncontextmenu = function (event){
+            if(window.event){
+                event = window.event;
+            }
+            try{
+                var the = event.srcElement;
+                    if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text" || the.tagName == "TEXTAREA"))){
+                        return false;
+                    }
+                    return true;
+            }
+            catch (e){
+                return false;
+            }
+        }
+    </script>
+    <!-- 时间查看脚本 -->
 	<script>
         function getTime() {
             var date = new Date();
@@ -54,13 +103,12 @@
     </script>
     <div class = 'Boxbr'>
     	<br><br><br><br>
-    </div>
     <div class = 'TimesHeader'>
-   		<h1><div class = 'box'></div></h1>
+   		   <h1><div class = 'box'></div></h1>
     </div>
     <div class = 'Searchinput'>
-    	<input type="text" name="word" size="60" style="height: 30px;width: 500px;background-color: #9a9a9a26;">
+    	<input type="text" name="word" id = "search",size="60" style="height: 30px;background-color: #9a9a9a26;" placeholder = "按Enter键进行检索">
     </div>
-   </body>
+    </body>
 </html>
 <!-- 哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊，啊啊啊啊啊啊啊啊啊啊！-->
